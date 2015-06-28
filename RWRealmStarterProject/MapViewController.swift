@@ -149,6 +149,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     } else {
       locationManager.startUpdatingLocation()
     }
+    
+    populateMap()
   }
   
   override func didReceiveMemoryWarning() {
