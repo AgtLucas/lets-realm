@@ -84,8 +84,15 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   
   //MARK: - Actions
   
-//  override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
-//    
-//  }
+  override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject!) -> Bool {
+    if validateFields() {
+      if specimen == nil {
+        addNewSpecimen()
+      }
+      return true
+    } else {
+      return false
+    }
+  }
   
 }
