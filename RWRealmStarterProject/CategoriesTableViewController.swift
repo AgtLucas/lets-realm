@@ -42,7 +42,11 @@ class CategoriesTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! UITableViewCell
     
+    let category = categories.objectAtIndex(UInt(indexPath.row)) as! Category
+    cell.textLabel?.text = category.name
+    
     return cell
+    
   }
 
   
