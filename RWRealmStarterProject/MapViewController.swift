@@ -181,15 +181,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   @IBAction func unwindFromAddNewEntry(segue: UIStoryboardSegue) {
     
     let addNewEntryController = segue.sourceViewController as! AddNewEntryController
+    let addedSpecimen = addNewEntryController.specimen as Specimen
+    let addedSpecimenCoordinate = CLLocationCoordinate2D(latitude: addedSpecimen.latitude, longitude: addedSpecimen.longitude)
+    
     
     if (lastAnnotation != nil) {
       mapView.removeAnnotation(lastAnnotation)
     } else {
       for annotation in mapView.annotations {
-        
+        let currentAnnotation = annotation as! SpecimenAnnotation
+        if currentAnnotation.coordinate.latitude == addedSpecimen.latitude && currentAnnotation.coordinate.longitude == addedSpecimen.longitude {
+          mapView.removeAnnotation(currentAnnotation)
+          break
+        }
       }
     }
     
+    let annotation = SpecimenAnnotation(coordinate: addedSpecimenCoordinate, title: addedSpecimen.name, subtitle: addedSpecimen.category.name, specimen: addedSpecimen)
+    
+    mapView.addAnnotation(annotation)
     lastAnnotation = nil;
 
   }
