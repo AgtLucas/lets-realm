@@ -11,7 +11,8 @@ import Realm
 
 class CategoriesTableViewController: UITableViewController {
   
-  var categories = RLMArray(objectClassName: Category.className())
+  var categories = Category.allObjects()
+  var selectedCategory: Category!
 
 
   // MARK: - View Lifecycle
@@ -49,7 +50,23 @@ class CategoriesTableViewController: UITableViewController {
   }
     
   func populateDefaultCategories() {
+    categories = Category.allObjects()
     
+    if categories.count == 0 {
+      let realm = RLMRealm.defaultRealm()
+      realm.beginWriteTransaction()
+      
+      let defaultCategories = ["Birds", "Mammals", "Flora", "Reptiles", "Arachnids"]
+      
+      for category in defaultCategories {
+        let newCategory = Category()
+        newCategory.name = category
+        realm.addObject(newCategory)
+      }
+      
+      realm.commitWriteTransaction()
+      categories = Category.allObjects()
+    }
   }
   
 }
