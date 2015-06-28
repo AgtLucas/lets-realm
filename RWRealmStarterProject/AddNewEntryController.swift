@@ -38,7 +38,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
 
   //MARK: - UITextFieldDelegate
   
-  func textFieldDidBeginEditing(textField: UITextField!) {
+  func textFieldDidBeginEditing(textField: UITextField) {
     performSegueWithIdentifier("Categories", sender: self)
   }
   
