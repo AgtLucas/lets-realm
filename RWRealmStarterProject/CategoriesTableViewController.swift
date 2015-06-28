@@ -21,6 +21,8 @@ class CategoriesTableViewController: UITableViewController {
     
     super.viewDidLoad()
     
+    populateDefaultCategories()
+    
   }
   
   override func didReceiveMemoryWarning() {
