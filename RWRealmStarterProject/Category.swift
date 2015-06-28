@@ -10,5 +10,5 @@ import UIKit
 import Realm
 
 class Category: RLMObject {
-    dynamic var name = ""
+  dynamic var name = ""
 }
