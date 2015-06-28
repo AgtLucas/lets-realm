@@ -11,7 +11,7 @@ import Realm
 
 class CategoriesTableViewController: UITableViewController {
   
-  var categories = [];
+  var categories = RLMArray(objectClassName: Category.className())
 
 
   // MARK: - View Lifecycle
