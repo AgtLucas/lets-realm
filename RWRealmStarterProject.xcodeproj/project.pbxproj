@@ -10,6 +10,7 @@
 		783EDA7919E0C3E70058CF5E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 783EDA7819E0C3E70058CF5E /* libc++.dylib */; };
 		A0A70EAB1B3F72900096E8C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A70EAA1B3F72900096E8C7 /* Realm.framework */; };
 		A0A943111B3F8D6D003C24D8 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A943101B3F8D6D003C24D8 /* RLMSupport.swift */; };
+		A0A943131B401732003C24D8 /* Specimen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A943121B401732003C24D8 /* Specimen.swift */; };
 		A909525A19941441006F7BD3 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909525919941441006F7BD3 /* LogViewController.swift */; };
 		A970099F1992742600CAD15D /* AddNewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970099E1992742600CAD15D /* AddNewEntryController.swift */; };
 		A97009A11992766A00CAD15D /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97009A01992766A00CAD15D /* CategoriesTableViewController.swift */; };
@@ -58,6 +59,7 @@
 		783EDA7819E0C3E70058CF5E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A0A70EAA1B3F72900096E8C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A0A943101B3F8D6D003C24D8 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		A0A943121B401732003C24D8 /* Specimen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specimen.swift; sourceTree = "<group>"; };
 		A909525919941441006F7BD3 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A970099E1992742600CAD15D /* AddNewEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewEntryController.swift; sourceTree = "<group>"; };
 		A97009A01992766A00CAD15D /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		A95A336E1995234D0042F160 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0A943121B401732003C24D8 /* Specimen.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A943131B401732003C24D8 /* Specimen.swift in Sources */,
 				A9E7AE0F199BCEE6009742F7 /* LogCell.swift in Sources */,
 				A9DCE2AC199156000021D3FE /* MapViewController.swift in Sources */,
 				A9DCE28D199155D90021D3FE /* AppDelegate.swift in Sources */,
