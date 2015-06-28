@@ -69,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
       if annotationView == nil {
         
-        let currentAnnoatation = annotation as SpecimenAnnotation
+        let currentAnnoatation = annotation as! SpecimenAnnotation
         annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotation.subtitle)
         
         switch currentAnnoatation.subtitle {
@@ -91,7 +91,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         annotationView.enabled = true
         annotationView.canShowCallout = true
-        var detailDisclosure = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+        var detailDisclosure = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
         annotationView.rightCalloutAccessoryView = detailDisclosure
 
         if currentAnnoatation.title == "Empty" {
@@ -108,7 +108,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   
   func mapView(mapView: MKMapView!, didAddAnnotationViews views: [AnyObject]!) {
     
-    for annotationView in views as [MKAnnotationView] {
+    for annotationView in views as! [MKAnnotationView] {
       if (annotationView.annotation is SpecimenAnnotation) {
         annotationView.transform = CGAffineTransformMakeTranslation(0, -500)
         UIView.animateWithDuration(0.5, delay: 0.0, options: .CurveLinear, animations: {
@@ -166,8 +166,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     
     if (segue.identifier == "NewEntry") {
-      let controller = segue.destinationViewController as AddNewEntryController
-      let specimenAnnotation = sender as SpecimenAnnotation
+      let controller = segue.destinationViewController as! AddNewEntryController
+      let specimenAnnotation = sender as! SpecimenAnnotation
       controller.selectedAnnotation = specimenAnnotation
     }
     
@@ -175,7 +175,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   
   @IBAction func unwindFromAddNewEntry(segue: UIStoryboardSegue) {
     
-    let addNewEntryController = segue.sourceViewController as AddNewEntryController
+    let addNewEntryController = segue.sourceViewController as! AddNewEntryController
     
     if (lastAnnotation != nil) {
       mapView.removeAnnotation(lastAnnotation)

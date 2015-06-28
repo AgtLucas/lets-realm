@@ -25,7 +25,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
   func updateSearchResultsForSearchController(searchController: UISearchController) {
     let searchString = searchController.searchBar.text
         
-    let searchResultsController = searchController.searchResultsController as UITableViewController
+    let searchResultsController = searchController.searchResultsController as! UITableViewController
     searchResultsController.tableView.reloadData()
   }
   
@@ -74,7 +74,7 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-    var cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as LogCell
+    var cell = tableView.dequeueReusableCellWithIdentifier("LogCell") as! LogCell
     
     return cell
     
@@ -92,12 +92,12 @@ class LogViewController: UITableViewController, UISearchResultsUpdating, UISearc
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     if (segue.identifier == "Edit") {
-      let controller = segue.destinationViewController as AddNewEntryController
+      let controller = segue.destinationViewController as! AddNewEntryController
       
       let indexPath = tableView.indexPathForSelectedRow()
       
       if searchController.active {
-        let searchResultsController = searchController.searchResultsController as UITableViewController
+        let searchResultsController = searchController.searchResultsController as! UITableViewController
         let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow()
         
       }

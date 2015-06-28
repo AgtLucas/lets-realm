@@ -55,7 +55,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   }
   
   @IBAction func unwindFromCategories(segue: UIStoryboardSegue) {
-    let categoriesController = segue.sourceViewController as CategoriesTableViewController
+    let categoriesController = segue.sourceViewController as! CategoriesTableViewController
 
   }
   
