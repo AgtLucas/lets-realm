@@ -19,6 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   
   var locationManager = CLLocationManager()
   var userLocated:Bool = false
+  var specimens = Specimen.allObjects()
   
   var lastAnnotation: MKAnnotation!
   
@@ -189,6 +190,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     lastAnnotation = nil;
 
+  }
+  
+  func populateMap() {
+    mapView.removeAnnotations(mapView.annotations)
+    
+    specimens = Specimen.allObjects()
+    
+    for specimen in specimens {
+      let aSpecimen = specimen as! Specimen
+      let coord = CLLocationCoordinate2D(latitude: aSpecimen.latitude, longitude: aSpecimen.longitude);
+      let specimenAnnotation = SpecimenAnnotation(coordinate: coord, title: aSpecimen.name, subtitle: aSpecimen.category.name, specimen: aSpecimen)
+      mapView.addAnnotation(specimenAnnotation)
+    }
   }
   
 }
