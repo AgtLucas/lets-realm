@@ -64,6 +64,24 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
 
   }
   
+  func addNewSpecimen() {
+    let realm = RLMRealm.defaultRealm()
+    
+    realm.beginWriteTransaction()
+    let newSpecimen = Specimen()
+    
+    newSpecimen.name = nameTextField.text
+    newSpecimen.category = selectedCategory
+    newSpecimen.specimenDescription = descriptionTextField.text
+    newSpecimen.latitude = selectedAnnotation.coordinate.latitude
+    newSpecimen.longitude = selectedAnnotation.coordinate.longitude
+    
+    realm.addObject(newSpecimen)
+    realm.commitWriteTransaction()
+    
+    specimen = newSpecimen
+  }
+  
   //MARK: - Actions
   
 //  override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
