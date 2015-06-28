@@ -16,6 +16,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   @IBOutlet weak var descriptionTextField: UITextView!
   
   var selectedAnnotation: SpecimenAnnotation!
+  var selectedCategory: Category!
 
   //MARK: - Validation
   

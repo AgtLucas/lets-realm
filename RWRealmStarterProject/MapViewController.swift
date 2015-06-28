@@ -136,6 +136,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    println(RLMRealm.defaultRealm().path)
+    
     title = "Map"
     
     locationManager.delegate = self
