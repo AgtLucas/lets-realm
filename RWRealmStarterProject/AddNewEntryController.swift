@@ -23,7 +23,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   
   func validateFields() -> Bool {
     
-    if (nameTextField.text.isEmpty || descriptionTextField.text.isEmpty) {
+    if (nameTextField.text.isEmpty || descriptionTextField.text.isEmpty || selectedCategory == nil) {
       let alertController = UIAlertController(title: "Validation Error", message: "All fields must be filled", preferredStyle: .Alert)
       let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Destructive, handler: {(alert : UIAlertAction!) in
         alertController.dismissViewControllerAnimated(true, completion: nil)
