@@ -47,5 +47,9 @@ class CategoriesTableViewController: UITableViewController {
     
     return indexPath
   }
+    
+  func populateDefaultCategories() {
+    
+  }
   
 }
