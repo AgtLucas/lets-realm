@@ -17,6 +17,7 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   
   var selectedAnnotation: SpecimenAnnotation!
   var selectedCategory: Category!
+  var specimen: Specimen!
 
   //MARK: - Validation
   
@@ -57,6 +58,9 @@ class AddNewEntryController: UIViewController, UITextFieldDelegate, UIImagePicke
   
   @IBAction func unwindFromCategories(segue: UIStoryboardSegue) {
     let categoriesController = segue.sourceViewController as! CategoriesTableViewController
+    
+    selectedCategory = categoriesController.selectedCategory
+    categoryTextField.text = selectedCategory.name
 
   }
   
