@@ -52,6 +52,7 @@ class CategoriesTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath {
     
+    selectedCategory = categories[UInt(indexPath.row)] as! Category
     return indexPath
   }
     
